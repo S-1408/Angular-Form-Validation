@@ -1,0 +1,94 @@
+
+<app-header></app-header>
+
+<div class="container">
+  <div class="row custom-wrapper">
+    <div class="col-md-12">
+      <form action="" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="group-gap">
+          <br>
+          <div class="avatar-upload">
+            <input type="file" name="image"  (change)="fileProgress($event)" />
+            <!-- <button class="btn btn-info" (change)="fileProgress($event)" >
+              upload an Image
+            </button> -->
+
+            <div *ngIf="fileUploadProgress">
+                Upload progress: {{ fileUploadProgress }}
+            </div>
+            <div class="image-preview mb-3" *ngIf="previewUrl">
+              <br>
+                <img [src]="previewUrl" style="height:300px ; width:300px; border-radius:150%;"  />
+            </div>
+
+            <div class="mb-3" *ngIf="uploadedFilePath">
+                {{uploadedFilePath}}
+            </div>
+         </div>
+        </div>
+        <div formGroupName="fullName">
+          <div class="mb-3">
+            <label for="">First Name</label>
+            <input type="text" class="form-control" placeholder="Enter First Name">
+
+
+          </div>
+          <div class="mb-3">
+            <label for="Last Name">Last Name</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name">
+          </div>
+
+          <div class="mb-3">
+            <label for="">Email</label>
+            <input type="email" class="form-control" placeholder="Enter your email address">
+          </div>
+
+          <div class="mb-3">
+
+            <label for="">Phone Number</label>
+            <input type="text" class="form-control" >
+          </div>
+
+          <div class="group-gap " formGroupName="address">
+            <h5>Address</h5>
+
+            <div class="mb-3">
+              <label for="">Street</label>
+              <input type="text" class="form-control" placeholder="Address1">
+            </div>
+            <div class="mb-3">
+              <label for="">City</label>
+              <input type="text" class="form-control" placeholder="Address2">
+            </div>
+
+            <div class="mb-3">
+              <label for="">State</label>
+              <select name="" id="" class="custom-select d-block w-10 " (change)="changeCity($event)" formControlName ="cityName">
+                <option value="">Choose...</option>
+                <option  *ngFor ="let city of City " [ngValue]="city">{{city}}</option>
+              </select>
+            </div>
+
+            <div class="group-gap" formArrayName="addDynamicElement"></div>
+            <h5 class="mb-3">Add Super Power</h5>
+            <div class="mb-3">
+              <button  type="button" class="btn btn-sm btn-success btn-block mb-3" (click)="addSuperPowers()">Add power</button>
+            <ul class="subjectList">
+              <li *ngFor="let item of addDynamicElement.controls;let i = index">
+                <input type="text" class="form-control" [formControlName]="i">
+              </li>
+            </ul>
+            </div>
+<!-- // Submit button -->
+            <button type="submit" class="btn btn-danger btn-lg btn-block">Create </button>
+<br>
+
+<br>
+<br><br>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

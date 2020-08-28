@@ -1,0 +1,128 @@
+<app-header></app-header>
+<div class="card  ">
+  <div class="card-header text-center">
+     <h2>Registration Form</h2>
+  </div>
+  <div class="card-body">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form row">
+
+
+    <div class="form-group col-5">
+      <div class="row">
+        <div class="col-3">
+          <label for="">First Name</label>
+        </div>
+        <div class="col-7">
+          <input type="text" name="firstName" class="form-control" formControlName="firstName" placeholder="Enter First Name">
+            <div *ngIf="submitted && f.firstName.errors" class="text-danger">
+              <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            </div>
+        </div>
+       </div>
+
+    </div>
+    <div class="form-group col-5">
+      <div class="row">
+        <div class="col-3">
+          <label for="">Last Name</label>
+        </div>
+        <div class="col-7">
+          <input type="text" name="lastName" class="form-control" formControlName="lastName"placeholder="Enter Last Name">
+          <div class="text-danger" *ngIf="submitted && f.lastName.errors">
+          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="row">
+    <div class="form-group col-5">
+      <div class="row">
+        <div class="col-3">
+          <label for="">Email</label>
+        </div>
+        <div class="col-7">
+          <input type="text" class="form-control" name="email" formControlName="email" placeholder="enter e-mail">
+          <div class="text-danger" *ngIf="submitted && f.email.errors">
+            <div *ngIf="f.email.errors.required"> Email is required</div>
+            <div *ngIf="f.email.errors.email">Email must be a valid email address.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+   <div class="form-froup col-5">
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label for="">Gender</label>
+      </div>
+    <div class="col-5">
+      <div class="row">
+        <div class="form-group col">
+          <input type="radio" id="male">&nbsp;
+          <label for="">Male</label>
+        </div>
+        <div class="form-group col">
+          <input type="radio" id="female">&nbsp;
+          <label for="">Female</label>
+        </div>
+       </div>
+    </div>
+
+
+
+  </div>
+   </div>
+  </div>
+    <div class="form-row">
+      <div class="form-group col-5">
+        <div class="row">
+          <div class="col-3"><label for="">Password</label></div>
+          <div class="col-7">
+            <input type="password" class="form-control" name="password" formControlName="password" placeholder="Type Password">
+            <div class="text-danger" *ngIf="submitted &&f.password.errors">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+            </div>
+          </div>
+        </div>
+     </div>
+      <div class="form-group col-5">
+    <div class="row">
+      <div class="col-3">
+        <label for="">Confirm Password</label>
+      </div>
+      <div class="col-7">
+        <input type="password" class="form-control" name="confirm Password" formControlName="confirmPassword" placeholder="Re-Type Password">
+       <div class="text-danger" *ngIf="submitted && f.confirmPassword.errors">
+         <div *ngIf="f.confirmPassword.errors.required">
+           Confirm Password is required
+         </div >
+          <div *ngIf ="f.confirmPassword.errors.mustmatch">Password mustmatch</div>
+       </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    <div class="form-group form-check">
+<input type="checkbox" name="" id="" class="form-check-input" formControlName="checkbox" >
+<label for="">Accept Terms & Conditions</label>
+<div class="text-danger" *ngIf="submitted && f.acceptTerms.errors">
+  <div *ngIf="f.acceptTerms.errors.required">accept ts& cs is required</div>
+</div>
+    </div>
+    <div class="text-center">
+     <button class="btn btn-primary mr-1">Submit</button>
+     <button class="btn btn-danger" type="reset" (click)= "onReset()">Cancle</button>
+    </div>
+    <p style="text-align: center;">
+      Already have an account ? <a href="login.html" data-toggle="modal" data-target="#modalLOGIN">Login
+        here</a>
+    </p>
+
+</form>
+  </div>
+</div>

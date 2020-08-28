@@ -1,0 +1,19 @@
+
+
+.ftco-navbar-light .navbar-nav >.nav-item>.nav-link{
+  font-size:20px;
+  font-weight:400;
+  padding: .9rem .9rem 20px 20px;
+
+}
+
+
+.navbar-nav>.nav-item>a{
+  color:blue;
+  // cursor:pointer;
+}
+.navbar-nav>.nav-item>a.active{
+  color:red;
+
+
+}

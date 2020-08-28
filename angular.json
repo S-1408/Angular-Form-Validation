@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Form-Validation"
+    }
+  },
+  "defaultProject": "Form-Validation",
+  "cli": {
+    "analytics": "a0afec5e-e57d-4c26-8b2b-54eace2e004d"
+  }
 }
