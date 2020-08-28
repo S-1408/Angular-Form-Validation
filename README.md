@@ -1,4 +1,6 @@
 # FormValidation
+![Screenshot (289)](https://user-images.githubusercontent.com/60258353/91591356-736c9800-e97a-11ea-874b-967bb71fca82.png)
+![Screenshot (288)](https://user-images.githubusercontent.com/60258353/91591382-7bc4d300-e97a-11ea-9ec1-b0fd0c9775e3.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
